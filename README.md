@@ -129,13 +129,3 @@ Após a execução, o arquivo `decompressed_example.txt` conterá o conteúdo or
 ## Dependências
 
 Este projeto não possui dependências externas além da biblioteca padrão do Python. Contudo, você pode incluir uma lista de pacotes no arquivo `requirements.txt` para facilitar a instalação de dependências caso seja necessário.
-
-## Contribuindo
-
-Contribuições são bem-vindas! Se você tiver sugestões de melhorias ou correções, sinta-se à vontade para abrir uma **issue** ou enviar um **pull request**.
-
-1. Fork o repositório.
-2. Crie uma branch para sua nova funcionalidade (`git checkout -b feature/nova-funcionalidade`).
-3. Faça suas alterações e commit (`git commit -am 'Adiciona nova funcionalidade'`).
-4. Push para a branch (`git push origin feature/nova-funcionalidade`).
-5. Abra um **pull request**.
