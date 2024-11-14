@@ -29,15 +29,22 @@ class LZWApp:
         decompressed_data = self.decoder.decompress(compressed_data)
         self.report_manager.stop_timer()
         write_file(output_path, decompressed_data)
-        self.report_manager.log_report()
+        self.report_manager.log_report(process_type="decompression")
 
 if __name__ == "__main__":
-    app = LZWApp()
     if len(sys.argv) < 4:
-        print("Uso: python main.py <compress|decompress> <input_file> <output_file>")
+        print("Uso: python main.py <compress|decompress> <input_file> <output_file> [max_bits]")
         sys.exit(1)
 
-    action, input_file, output_file = sys.argv[1], sys.argv[2], sys.argv[3]
+    action = sys.argv[1]
+    input_file = sys.argv[2]
+    output_file = sys.argv[3]
+    
+    # Define max_bits como 12 por padrão, mas permite que seja configurado como argumento opcional
+    max_bits = int(sys.argv[4]) if len(sys.argv) > 4 else 12
+
+    # Inicializa o aplicativo com o valor de max_bits
+    app = LZWApp(max_bits)
 
     if action == "compress":
         app.compress_file(input_file, output_file)

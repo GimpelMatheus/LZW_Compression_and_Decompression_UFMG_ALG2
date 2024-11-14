@@ -7,6 +7,7 @@ class ReportManager:
         self.start_time = None
         self.end_time = None
         self.compression_ratio = None
+        self.decompression_ratio = None
         self.dictionary_size = None
 
     def start_timer(self):
@@ -21,7 +22,15 @@ class ReportManager:
         """Calcula e armazena a taxa de compressão."""
         self.compression_ratio = original_size / compressed_size
 
-    def log_report(self):
+    def calculate_decompression_ratio(self, compressed_size, decompressed_size):
+        """Calcula e armazena a taxa de descompressão."""
+        self.decompression_ratio = decompressed_size / compressed_size
+
+    def log_report(self, process_type="compression"):
         """Exibe as estatísticas do processo."""
         print(f"Tempo de execução: {self.end_time - self.start_time:.4f} segundos")
-        print(f"Taxa de compressão: {self.compression_ratio:.4f}")
+        
+        if process_type == "compression":
+            print(f"Taxa de compressão: {self.compression_ratio:.4f}")
+        elif process_type == "decompression":
+            print(f"Taxa de descompressão: {self.decompression_ratio:.4f}")
