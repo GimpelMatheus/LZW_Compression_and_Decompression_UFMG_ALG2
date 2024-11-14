@@ -1,7 +1,7 @@
 import sys
 from lzw_encoder import LZWEncoder
 from lzw_decoder import LZWDecoder
-from LZW_Compression_and_Decompression_UFMG_ALG2.utils.utils import read_file, write_file
+from utils import read_file, write_file
 from report_manager import ReportManager
 
 class LZWApp:
