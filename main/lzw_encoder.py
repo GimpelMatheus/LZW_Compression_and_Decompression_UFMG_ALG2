@@ -18,11 +18,11 @@ class LZWEncoder:
 
     def compress(self, data):
         """Compressão de dados com ajuste dinâmico de max_bits para garantir a eficiência."""
-        words = data.split()
         original_size = len(data)
 
-        # Converte cada palavra para uma sequência binária
-        binary_words = [''.join(format(ord(char), '08b') for char in word) for word in words]
+        # Converte cada símbolo para uma string binária de 8 bits
+        binary_words = [''.join(format(ord(char), '08b')) for char in data]
+
         compressed_data = self._compress_with_max_bits(binary_words)
         compressed_size = len(compressed_data) * (self.max_bits // 8)
 
