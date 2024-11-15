@@ -1,7 +1,10 @@
 import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from lzw_encoder import LZWEncoder
 from lzw_decoder import LZWDecoder
-from utils import read_file, write_file
+from utils.utils import read_file, read_compressed_file, write_file, write_compressed_file
 from report_manager import ReportManager
 
 class LZWApp:
@@ -19,15 +22,16 @@ class LZWApp:
         compressed_data = self.encoder.compress(data)
         self.report_manager.stop_timer()
         self.report_manager.calculate_compression_ratio(len(data), len(compressed_data))
-        write_file(output_path, " ".join(map(str, compressed_data)))
+        write_compressed_file(output_path, compressed_data)
         self.report_manager.log_report()
 
     def decompress_file(self, input_path, output_path):
         """Executa a descompressão de um arquivo."""
-        compressed_data = list(map(int, read_file(input_path).split()))
+        compressed_data = read_compressed_file(input_path)
         self.report_manager.start_timer()
         decompressed_data = self.decoder.decompress(compressed_data)
         self.report_manager.stop_timer()
+        self.report_manager.calculate_decompression_ratio(len(compressed_data), len(decompressed_data))
         write_file(output_path, decompressed_data)
         self.report_manager.log_report(process_type="decompression")
 
