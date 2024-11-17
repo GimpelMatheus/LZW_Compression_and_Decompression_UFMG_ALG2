@@ -1,0 +1,317 @@
+File,Compression Success,Compression Time (s),Decompression Success,Decompression Time (s),Match Original,Compression Output,Decompression Output
+mixed_data.txt,True,0.08371806144714355,True,0.0500798225402832,False,"Tempo de execução: 0.0389 segundos
+Taxa de compressão: 3.0446
+","Tempo de execução: 0.0002 segundos
+Taxa de descompressão: 3.0990
+"
+hex_values.txt,True,0.07635831832885742,True,0.060819149017333984,True,"Tempo de execução: 0.0232 segundos
+Taxa de compressão: 2.5000
+","Tempo de execução: 0.0001 segundos
+Taxa de descompressão: 2.5000
+"
+sql_query.sql,True,0.14838552474975586,True,0.0623929500579834,True,"Tempo de execução: 0.0816 segundos
+Taxa de compressão: 5.2632
+","Tempo de execução: 0.0002 segundos
+Taxa de descompressão: 5.2632
+"
+csv_data.csv,True,0.10917258262634277,True,0.07145857810974121,True,"Tempo de execução: 0.0441 segundos
+Taxa de compressão: 3.4595
+","Tempo de execução: 0.0004 segundos
+Taxa de descompressão: 3.4595
+"
+json_array.txt,True,0.14715003967285156,True,0.06117582321166992,True,"Tempo de execução: 0.0562 segundos
+Taxa de compressão: 3.1034
+","Tempo de execução: 0.0002 segundos
+Taxa de descompressão: 3.1034
+"
+alpha_numeric.txt,True,0.09837698936462402,True,0.06360268592834473,True,"Tempo de execução: 0.0333 segundos
+Taxa de compressão: 3.4188
+","Tempo de execução: 0.0002 segundos
+Taxa de descompressão: 3.4188
+"
+repeating_words.txt,True,0.18381905555725098,True,0.05466413497924805,True,"Tempo de execução: 0.1184 segundos
+Taxa de compressão: 10.3586
+","Tempo de execução: 0.0002 segundos
+Taxa de descompressão: 10.3586
+"
+special_characters.txt,False,0.353635311126709,False,0.29974985122680664,False,"Compressão aumentou o tamanho do arquivo. Retornando o original.
+Traceback (most recent call last):
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 54, in <module>
+    app.compress_file(input_file, output_file)
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 25, in compress_file
+    write_compressed_file(output_path, compressed_data)
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/utils/utils.py"", line 31, in write_compressed_file
+    file.write(pack('>H', code))
+               ^^^^^^^^^^^^^^^^
+struct.error: required argument is not an integer
+","Traceback (most recent call last):
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 56, in <module>
+    app.decompress_file(input_file, output_file)
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 34, in decompress_file
+    self.report_manager.calculate_decompression_ratio(len(compressed_data), len(decompressed_data))
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/report_manager.py"", line 27, in calculate_decompression_ratio
+    self.decompression_ratio = decompressed_size / compressed_size
+                               ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+ZeroDivisionError: division by zero
+"
+binary_pattern.bin,False,0.30569028854370117,False,0.27043771743774414,False,"Traceback (most recent call last):
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 54, in <module>
+    app.compress_file(input_file, output_file)
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 20, in compress_file
+    data = read_file(input_path)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/utils/utils.py"", line 7, in read_file
+    return file.read()
+           ^^^^^^^^^^^
+  File ""<frozen codecs>"", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 1: invalid start byte
+","Traceback (most recent call last):
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 56, in <module>
+    app.decompress_file(input_file, output_file)
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 30, in decompress_file
+    compressed_data = read_compressed_file(input_path)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/utils/utils.py"", line 12, in read_compressed_file
+    with open(filepath, ""rb"") as file:
+         ^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'main/lzw_test_cases_compressed/binary_pattern.bin.lzw'
+"
+json_data.txt,True,0.06515955924987793,True,0.0539243221282959,True,"Tempo de execução: 0.0178 segundos
+Taxa de compressão: 1.1463
+","Tempo de execução: 0.0001 segundos
+Taxa de descompressão: 1.1463
+"
+mixed_case_text.txt,True,0.08875036239624023,True,0.0495600700378418,True,"Tempo de execução: 0.0407 segundos
+Taxa de compressão: 4.1753
+","Tempo de execução: 0.0001 segundos
+Taxa de descompressão: 4.1753
+"
+html_snippet.txt,True,0.07183170318603516,True,0.044550418853759766,True,"Tempo de execução: 0.0189 segundos
+Taxa de compressão: 1.3333
+","Tempo de execução: 0.0001 segundos
+Taxa de descompressão: 1.3333
+"
+small_image.bmp,True,0.2671365737915039,True,0.05646920204162598,True,"Tempo de execução: 0.2194 segundos
+Taxa de compressão: 35.5872
+","Tempo de execução: 0.0004 segundos
+Taxa de descompressão: 35.5872
+"
+html_page.txt,True,0.16145563125610352,True,0.051512956619262695,True,"Tempo de execução: 0.1007 segundos
+Taxa de compressão: 5.2328
+","Tempo de execução: 0.0004 segundos
+Taxa de descompressão: 5.2328
+"
+html_long_text.txt,True,0.15114998817443848,True,0.0480349063873291,True,"Tempo de execução: 0.1029 segundos
+Taxa de compressão: 7.2720
+","Tempo de execução: 0.0003 segundos
+Taxa de descompressão: 7.2720
+"
+long_random_chars.txt,True,0.08643126487731934,True,0.05226254463195801,True,"Tempo de execução: 0.0400 segundos
+Taxa de compressão: 2.5000
+","Tempo de execução: 0.0002 segundos
+Taxa de descompressão: 2.5000
+"
+large_image.bmp,False,0.4385249614715576,False,0.4134674072265625,False,"Traceback (most recent call last):
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 54, in <module>
+    app.compress_file(input_file, output_file)
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 20, in compress_file
+    data = read_file(input_path)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/utils/utils.py"", line 7, in read_file
+    return file.read()
+           ^^^^^^^^^^^
+  File ""<frozen codecs>"", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x80 in position 128: invalid start byte
+","Traceback (most recent call last):
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 56, in <module>
+    app.decompress_file(input_file, output_file)
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 30, in decompress_file
+    compressed_data = read_compressed_file(input_path)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/utils/utils.py"", line 12, in read_compressed_file
+    with open(filepath, ""rb"") as file:
+         ^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'main/lzw_test_cases_compressed/large_image.bmp.lzw'
+"
+mixed_ascii_binary.bin,True,0.08524656295776367,True,0.060616254806518555,True,"Tempo de execução: 0.0301 segundos
+Taxa de compressão: 7.2727
+","Tempo de execução: 0.0001 segundos
+Taxa de descompressão: 7.2727
+"
+random_english_words.txt,True,0.1817471981048584,True,0.046706438064575195,True,"Tempo de execução: 0.1003 segundos
+Taxa de compressão: 5.3936
+","Tempo de execução: 0.0003 segundos
+Taxa de descompressão: 5.3936
+"
+sequential_numbers.txt,True,0.09345483779907227,True,0.06433749198913574,True,"Tempo de execução: 0.0426 segundos
+Taxa de compressão: 7.2993
+","Tempo de execução: 0.0002 segundos
+Taxa de descompressão: 7.2993
+"
+json_nested.txt,True,0.11001372337341309,True,0.07291293144226074,True,"Tempo de execução: 0.0517 segundos
+Taxa de compressão: 4.0385
+","Tempo de execução: 0.0003 segundos
+Taxa de descompressão: 4.0385
+"
+short_text.txt,False,0.4411294460296631,False,0.32346057891845703,False,"Compressão aumentou o tamanho do arquivo. Retornando o original.
+Traceback (most recent call last):
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 54, in <module>
+    app.compress_file(input_file, output_file)
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 25, in compress_file
+    write_compressed_file(output_path, compressed_data)
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/utils/utils.py"", line 31, in write_compressed_file
+    file.write(pack('>H', code))
+               ^^^^^^^^^^^^^^^^
+struct.error: required argument is not an integer
+","Traceback (most recent call last):
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 56, in <module>
+    app.decompress_file(input_file, output_file)
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 34, in decompress_file
+    self.report_manager.calculate_decompression_ratio(len(compressed_data), len(decompressed_data))
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/report_manager.py"", line 27, in calculate_decompression_ratio
+    self.decompression_ratio = decompressed_size / compressed_size
+                               ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+ZeroDivisionError: division by zero
+"
+css_snippet.css,True,0.10291838645935059,True,0.04843878746032715,True,"Tempo de execução: 0.0495 segundos
+Taxa de compressão: 4.7273
+","Tempo de execução: 0.0002 segundos
+Taxa de descompressão: 4.7273
+"
+long_numbers.txt,True,0.10827922821044922,True,0.04941368103027344,True,"Tempo de execução: 0.0590 segundos
+Taxa de compressão: 10.2564
+","Tempo de execução: 0.0002 segundos
+Taxa de descompressão: 10.2564
+"
+empty_string.txt,False,0.3394784927368164,False,0.3123190402984619,False,"Compressão aumentou o tamanho do arquivo. Retornando o original.
+Traceback (most recent call last):
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 54, in <module>
+    app.compress_file(input_file, output_file)
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 24, in compress_file
+    self.report_manager.calculate_compression_ratio(len(data), len(compressed_data))
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/report_manager.py"", line 23, in calculate_compression_ratio
+    self.compression_ratio = original_size / compressed_size
+                             ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+ZeroDivisionError: division by zero
+","Traceback (most recent call last):
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 56, in <module>
+    app.decompress_file(input_file, output_file)
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 30, in decompress_file
+    compressed_data = read_compressed_file(input_path)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/utils/utils.py"", line 12, in read_compressed_file
+    with open(filepath, ""rb"") as file:
+         ^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'main/lzw_test_cases_compressed/empty_string.txt.lzw'
+"
+numeric_sequence.txt,True,0.06628012657165527,True,0.04945731163024902,True,"Tempo de execução: 0.0189 segundos
+Taxa de compressão: 1.6667
+","Tempo de execução: 0.0001 segundos
+Taxa de descompressão: 1.6667
+"
+unicode_symbols.txt,True,0.07877945899963379,False,0.2817258834838867,False,"Tempo de execução: 0.0322 segundos
+Taxa de compressão: 3.7037
+","Traceback (most recent call last):
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 56, in <module>
+    app.decompress_file(input_file, output_file)
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 32, in decompress_file
+    decompressed_data = self.decoder.decompress(compressed_data)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/lzw_decoder.py"", line 39, in decompress
+    new_entry = self.dictionary[prev_code] + entry[0]
+                ~~~~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 277
+"
+repeated_text.txt,True,0.1808321475982666,True,0.07761359214782715,True,"Tempo de execução: 0.1216 segundos
+Taxa de compressão: 5.3271
+","Tempo de execução: 0.0005 segundos
+Taxa de descompressão: 5.3271
+"
+code_snippet.py,True,0.13617515563964844,True,0.04468178749084473,True,"Tempo de execução: 0.0697 segundos
+Taxa de compressão: 4.1716
+","Tempo de execução: 0.0002 segundos
+Taxa de descompressão: 4.1716
+"
+xml_snippet.xml,True,0.10173439979553223,True,0.0600435733795166,True,"Tempo de execução: 0.0507 segundos
+Taxa de compressão: 4.6829
+","Tempo de execução: 0.0002 segundos
+Taxa de descompressão: 4.6829
+"
+large_text_file.txt,True,0.15168309211730957,True,0.04846024513244629,True,"Tempo de execução: 0.0872 segundos
+Taxa de compressão: 4.5147
+","Tempo de execução: 0.0004 segundos
+Taxa de descompressão: 4.5147
+"
+small_text_file.txt,True,0.08598971366882324,True,0.07178020477294922,True,"Tempo de execução: 0.0233 segundos
+Taxa de compressão: 1.0930
+","Tempo de execução: 0.0001 segundos
+Taxa de descompressão: 1.0930
+"
+unicode_text.txt,True,0.09501767158508301,False,0.273953914642334,False,"Tempo de execução: 0.0383 segundos
+Taxa de compressão: 2.2917
+","Traceback (most recent call last):
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 56, in <module>
+    app.decompress_file(input_file, output_file)
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 32, in decompress_file
+    decompressed_data = self.decoder.decompress(compressed_data)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/lzw_decoder.py"", line 39, in decompress
+    new_entry = self.dictionary[prev_code] + entry[0]
+                ~~~~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 311
+"
+binary_file.bin,False,0.329578161239624,False,0.2664008140563965,False,"Traceback (most recent call last):
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 54, in <module>
+    app.compress_file(input_file, output_file)
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 20, in compress_file
+    data = read_file(input_path)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/utils/utils.py"", line 7, in read_file
+    return file.read()
+           ^^^^^^^^^^^
+  File ""<frozen codecs>"", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x80 in position 128: invalid start byte
+","Traceback (most recent call last):
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 56, in <module>
+    app.decompress_file(input_file, output_file)
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 30, in decompress_file
+    compressed_data = read_compressed_file(input_path)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/utils/utils.py"", line 12, in read_compressed_file
+    with open(filepath, ""rb"") as file:
+         ^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'main/lzw_test_cases_compressed/binary_file.bin.lzw'
+"
+html_with_comments.txt,True,0.1059713363647461,True,0.05440211296081543,True,"Tempo de execução: 0.0580 segundos
+Taxa de compressão: 4.2444
+","Tempo de execução: 0.0003 segundos
+Taxa de descompressão: 4.2444
+"
+yaml_data.yaml,True,0.08735394477844238,True,0.05474233627319336,True,"Tempo de execução: 0.0420 segundos
+Taxa de compressão: 3.4872
+","Tempo de execução: 0.0002 segundos
+Taxa de descompressão: 3.4872
+"
+long_text_with_numbers.txt,True,0.08965587615966797,True,0.047896385192871094,True,"Tempo de execução: 0.0445 segundos
+Taxa de compressão: 4.2661
+","Tempo de execução: 0.0002 segundos
+Taxa de descompressão: 4.2661
+"
+symbols_and_numbers.txt,True,0.09001946449279785,True,0.04654550552368164,True,"Tempo de execução: 0.0380 segundos
+Taxa de compressão: 5.2632
+","Tempo de execução: 0.0002 segundos
+Taxa de descompressão: 5.2632
+"
+unicode_emojis.txt,True,0.07944750785827637,False,0.31798434257507324,False,"Tempo de execução: 0.0289 segundos
+Taxa de compressão: 10.0000
+","Traceback (most recent call last):
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 56, in <module>
+    app.decompress_file(input_file, output_file)
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 32, in decompress_file
+    decompressed_data = self.decoder.decompress(compressed_data)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/lzw_decoder.py"", line 33, in decompress
+    entry = self.dictionary[prev_code] + self.dictionary[prev_code][0]
+            ~~~~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 257
+"
