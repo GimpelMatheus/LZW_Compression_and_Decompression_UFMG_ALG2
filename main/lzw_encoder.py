@@ -21,7 +21,7 @@ class LZWEncoder:
         original_size = len(data)
 
         # Converte cada símbolo para uma string binária de 8 bits
-        binary_words = [''.join(format(ord(char), '08b')) for char in data]
+        binary_words = [''.join(format(ord(str(char)[0]), '08b')) if len(str(char)) == 1 else '' for char in data]
 
         compressed_data = self._compress_with_max_bits(binary_words)
         compressed_size = len(compressed_data) * (self.max_bits // 8)
@@ -36,6 +36,8 @@ class LZWEncoder:
         if compressed_size >= original_size:
             print("Compressão aumentou o tamanho do arquivo. Retornando o original.")
             return data
+        
+        compressed_data = [int(ord(code)) if isinstance(code, str) and code.isdigit() else code for code in compressed_data]
 
         return compressed_data
 

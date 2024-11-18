@@ -5,9 +5,9 @@ import hashlib
 import pandas as pd
 
 # Define directories and paths
-test_dir = "main/lzw_test_cases"
-compressed_dir = "main/lzw_test_cases_compressed"
-decompressed_dir = "main/lzw_test_cases_decompressed"
+test_dir = "lzw_test_cases"
+compressed_dir = "lzw_test_cases_compressed"
+decompressed_dir = "lzw_test_cases_decompressed"
 os.makedirs(compressed_dir, exist_ok=True)
 os.makedirs(decompressed_dir, exist_ok=True)
 
@@ -30,7 +30,7 @@ for test_file in os.listdir(test_dir):
 
     # Compress the file
     start_time = time.time()
-    compress_cmd = ["python3", "main/main.py", "compress", test_file_path, compressed_file_path]
+    compress_cmd = ["python3", "main.py", "compress", test_file_path, compressed_file_path]
     compress_result = subprocess.run(compress_cmd, capture_output=True, text=True)
     compress_time = time.time() - start_time
 
@@ -39,7 +39,7 @@ for test_file in os.listdir(test_dir):
 
     # Decompress the file
     start_time = time.time()
-    decompress_cmd = ["python3", "main/main.py", "decompress", compressed_file_path, decompressed_file_path]
+    decompress_cmd = ["python3", "main.py", "decompress", compressed_file_path, decompressed_file_path]
     decompress_result = subprocess.run(decompress_cmd, capture_output=True, text=True)
     decompress_time = time.time() - start_time
 
@@ -63,7 +63,7 @@ for test_file in os.listdir(test_dir):
 
 # Convert report data to DataFrame and save as CSV
 report_df = pd.DataFrame(report_data)
-report_path = "main/report/compression_report.csv"
+report_path = "report/compression_report.csv"
 report_df.to_csv(report_path, index=False)
 
 report_path

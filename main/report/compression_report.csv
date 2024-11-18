@@ -1,317 +1,199 @@
 File,Compression Success,Compression Time (s),Decompression Success,Decompression Time (s),Match Original,Compression Output,Decompression Output
-mixed_data.txt,True,0.08371806144714355,True,0.0500798225402832,False,"Tempo de execução: 0.0389 segundos
+mixed_data.txt,True,0.11796236038208008,True,0.08171987533569336,False,"Tempo de execução: 0.0492 segundos
 Taxa de compressão: 3.0446
-","Tempo de execução: 0.0002 segundos
+","Tempo de execução: 0.0003 segundos
 Taxa de descompressão: 3.0990
 "
-hex_values.txt,True,0.07635831832885742,True,0.060819149017333984,True,"Tempo de execução: 0.0232 segundos
+hex_values.txt,True,0.14036941528320312,True,0.09695148468017578,True,"Tempo de execução: 0.0371 segundos
 Taxa de compressão: 2.5000
-","Tempo de execução: 0.0001 segundos
+","Tempo de execução: 0.0002 segundos
 Taxa de descompressão: 2.5000
 "
-sql_query.sql,True,0.14838552474975586,True,0.0623929500579834,True,"Tempo de execução: 0.0816 segundos
+sql_query.sql,True,0.19099903106689453,True,0.07553219795227051,True,"Tempo de execução: 0.0999 segundos
 Taxa de compressão: 5.2632
-","Tempo de execução: 0.0002 segundos
+","Tempo de execução: 0.0003 segundos
 Taxa de descompressão: 5.2632
 "
-csv_data.csv,True,0.10917258262634277,True,0.07145857810974121,True,"Tempo de execução: 0.0441 segundos
+csv_data.csv,True,0.12652921676635742,True,0.06533050537109375,True,"Tempo de execução: 0.0568 segundos
 Taxa de compressão: 3.4595
-","Tempo de execução: 0.0004 segundos
+","Tempo de execução: 0.0002 segundos
 Taxa de descompressão: 3.4595
 "
-json_array.txt,True,0.14715003967285156,True,0.06117582321166992,True,"Tempo de execução: 0.0562 segundos
+json_array.txt,True,0.10776782035827637,True,0.06293392181396484,True,"Tempo de execução: 0.0412 segundos
 Taxa de compressão: 3.1034
-","Tempo de execução: 0.0002 segundos
+","Tempo de execução: 0.0001 segundos
 Taxa de descompressão: 3.1034
 "
-alpha_numeric.txt,True,0.09837698936462402,True,0.06360268592834473,True,"Tempo de execução: 0.0333 segundos
-Taxa de compressão: 3.4188
+alpha_numeric.txt,True,0.09381937980651855,True,0.05126476287841797,True,"Tempo de execução: 0.0339 segundos
+Taxa de compressão: 3.3583
 ","Tempo de execução: 0.0002 segundos
-Taxa de descompressão: 3.4188
+Taxa de descompressão: 3.3583
 "
-repeating_words.txt,True,0.18381905555725098,True,0.05466413497924805,True,"Tempo de execução: 0.1184 segundos
+repeating_words.txt,True,0.1733536720275879,True,0.060096025466918945,True,"Tempo de execução: 0.1150 segundos
 Taxa de compressão: 10.3586
 ","Tempo de execução: 0.0002 segundos
 Taxa de descompressão: 10.3586
 "
-special_characters.txt,False,0.353635311126709,False,0.29974985122680664,False,"Compressão aumentou o tamanho do arquivo. Retornando o original.
-Traceback (most recent call last):
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 54, in <module>
-    app.compress_file(input_file, output_file)
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 25, in compress_file
-    write_compressed_file(output_path, compressed_data)
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/utils/utils.py"", line 31, in write_compressed_file
-    file.write(pack('>H', code))
-               ^^^^^^^^^^^^^^^^
-struct.error: required argument is not an integer
-","Traceback (most recent call last):
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 56, in <module>
-    app.decompress_file(input_file, output_file)
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 34, in decompress_file
-    self.report_manager.calculate_decompression_ratio(len(compressed_data), len(decompressed_data))
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/report_manager.py"", line 27, in calculate_decompression_ratio
-    self.decompression_ratio = decompressed_size / compressed_size
-                               ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
-ZeroDivisionError: division by zero
+special_characters.txt,True,0.1237180233001709,True,0.05624222755432129,True,"Compressão aumentou o tamanho do arquivo. Retornando o original.
+Tempo de execução: 0.0735 segundos
+Taxa de compressão: 1.0000
+","Tempo de execução: 0.0001 segundos
+Taxa de descompressão: 1.0000
 "
-binary_pattern.bin,False,0.30569028854370117,False,0.27043771743774414,False,"Traceback (most recent call last):
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 54, in <module>
-    app.compress_file(input_file, output_file)
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 20, in compress_file
-    data = read_file(input_path)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/utils/utils.py"", line 7, in read_file
-    return file.read()
-           ^^^^^^^^^^^
-  File ""<frozen codecs>"", line 322, in decode
-UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 1: invalid start byte
-","Traceback (most recent call last):
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 56, in <module>
-    app.decompress_file(input_file, output_file)
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 30, in decompress_file
-    compressed_data = read_compressed_file(input_path)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/utils/utils.py"", line 12, in read_compressed_file
-    with open(filepath, ""rb"") as file:
-         ^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'main/lzw_test_cases_compressed/binary_pattern.bin.lzw'
+binary_pattern.bin,True,0.06679868698120117,True,0.05421018600463867,False,"Tempo de execução: 0.0177 segundos
+Taxa de compressão: 16.0000
+","Tempo de execução: 0.0001 segundos
+Taxa de descompressão: 8.0000
 "
-json_data.txt,True,0.06515955924987793,True,0.0539243221282959,True,"Tempo de execução: 0.0178 segundos
+json_data.txt,True,0.1059722900390625,True,0.07635855674743652,True,"Tempo de execução: 0.0229 segundos
 Taxa de compressão: 1.1463
 ","Tempo de execução: 0.0001 segundos
 Taxa de descompressão: 1.1463
 "
-mixed_case_text.txt,True,0.08875036239624023,True,0.0495600700378418,True,"Tempo de execução: 0.0407 segundos
+mixed_case_text.txt,True,0.12567138671875,True,0.06520891189575195,True,"Tempo de execução: 0.0470 segundos
 Taxa de compressão: 4.1753
-","Tempo de execução: 0.0001 segundos
+","Tempo de execução: 0.0002 segundos
 Taxa de descompressão: 4.1753
 "
-html_snippet.txt,True,0.07183170318603516,True,0.044550418853759766,True,"Tempo de execução: 0.0189 segundos
+html_snippet.txt,True,0.09109115600585938,True,0.05873584747314453,True,"Tempo de execução: 0.0236 segundos
 Taxa de compressão: 1.3333
 ","Tempo de execução: 0.0001 segundos
 Taxa de descompressão: 1.3333
 "
-small_image.bmp,True,0.2671365737915039,True,0.05646920204162598,True,"Tempo de execução: 0.2194 segundos
+small_image.bmp,True,0.34487104415893555,True,0.05463576316833496,False,"Tempo de execução: 0.2923 segundos
 Taxa de compressão: 35.5872
-","Tempo de execução: 0.0004 segundos
+","Tempo de execução: 0.0002 segundos
 Taxa de descompressão: 35.5872
 "
-html_page.txt,True,0.16145563125610352,True,0.051512956619262695,True,"Tempo de execução: 0.1007 segundos
+html_page.txt,True,0.18832898139953613,True,0.06899404525756836,True,"Tempo de execução: 0.1308 segundos
 Taxa de compressão: 5.2328
 ","Tempo de execução: 0.0004 segundos
 Taxa de descompressão: 5.2328
 "
-html_long_text.txt,True,0.15114998817443848,True,0.0480349063873291,True,"Tempo de execução: 0.1029 segundos
+html_long_text.txt,True,0.18493366241455078,True,0.05596733093261719,True,"Tempo de execução: 0.1214 segundos
 Taxa de compressão: 7.2720
 ","Tempo de execução: 0.0003 segundos
 Taxa de descompressão: 7.2720
 "
-long_random_chars.txt,True,0.08643126487731934,True,0.05226254463195801,True,"Tempo de execução: 0.0400 segundos
-Taxa de compressão: 2.5000
-","Tempo de execução: 0.0002 segundos
-Taxa de descompressão: 2.5000
-"
-large_image.bmp,False,0.4385249614715576,False,0.4134674072265625,False,"Traceback (most recent call last):
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 54, in <module>
-    app.compress_file(input_file, output_file)
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 20, in compress_file
-    data = read_file(input_path)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/utils/utils.py"", line 7, in read_file
-    return file.read()
-           ^^^^^^^^^^^
-  File ""<frozen codecs>"", line 322, in decode
-UnicodeDecodeError: 'utf-8' codec can't decode byte 0x80 in position 128: invalid start byte
-","Traceback (most recent call last):
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 56, in <module>
-    app.decompress_file(input_file, output_file)
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 30, in decompress_file
-    compressed_data = read_compressed_file(input_path)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/utils/utils.py"", line 12, in read_compressed_file
-    with open(filepath, ""rb"") as file:
-         ^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'main/lzw_test_cases_compressed/large_image.bmp.lzw'
-"
-mixed_ascii_binary.bin,True,0.08524656295776367,True,0.060616254806518555,True,"Tempo de execução: 0.0301 segundos
-Taxa de compressão: 7.2727
-","Tempo de execução: 0.0001 segundos
-Taxa de descompressão: 7.2727
-"
-random_english_words.txt,True,0.1817471981048584,True,0.046706438064575195,True,"Tempo de execução: 0.1003 segundos
-Taxa de compressão: 5.3936
-","Tempo de execução: 0.0003 segundos
-Taxa de descompressão: 5.3936
-"
-sequential_numbers.txt,True,0.09345483779907227,True,0.06433749198913574,True,"Tempo de execução: 0.0426 segundos
-Taxa de compressão: 7.2993
-","Tempo de execução: 0.0002 segundos
-Taxa de descompressão: 7.2993
-"
-json_nested.txt,True,0.11001372337341309,True,0.07291293144226074,True,"Tempo de execução: 0.0517 segundos
-Taxa de compressão: 4.0385
-","Tempo de execução: 0.0003 segundos
-Taxa de descompressão: 4.0385
-"
-short_text.txt,False,0.4411294460296631,False,0.32346057891845703,False,"Compressão aumentou o tamanho do arquivo. Retornando o original.
-Traceback (most recent call last):
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 54, in <module>
-    app.compress_file(input_file, output_file)
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 25, in compress_file
-    write_compressed_file(output_path, compressed_data)
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/utils/utils.py"", line 31, in write_compressed_file
-    file.write(pack('>H', code))
-               ^^^^^^^^^^^^^^^^
-struct.error: required argument is not an integer
-","Traceback (most recent call last):
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 56, in <module>
-    app.decompress_file(input_file, output_file)
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 34, in decompress_file
-    self.report_manager.calculate_decompression_ratio(len(compressed_data), len(decompressed_data))
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/report_manager.py"", line 27, in calculate_decompression_ratio
-    self.decompression_ratio = decompressed_size / compressed_size
-                               ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
-ZeroDivisionError: division by zero
-"
-css_snippet.css,True,0.10291838645935059,True,0.04843878746032715,True,"Tempo de execução: 0.0495 segundos
-Taxa de compressão: 4.7273
-","Tempo de execução: 0.0002 segundos
-Taxa de descompressão: 4.7273
-"
-long_numbers.txt,True,0.10827922821044922,True,0.04941368103027344,True,"Tempo de execução: 0.0590 segundos
-Taxa de compressão: 10.2564
-","Tempo de execução: 0.0002 segundos
-Taxa de descompressão: 10.2564
-"
-empty_string.txt,False,0.3394784927368164,False,0.3123190402984619,False,"Compressão aumentou o tamanho do arquivo. Retornando o original.
-Traceback (most recent call last):
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 54, in <module>
-    app.compress_file(input_file, output_file)
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 24, in compress_file
-    self.report_manager.calculate_compression_ratio(len(data), len(compressed_data))
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/report_manager.py"", line 23, in calculate_compression_ratio
-    self.compression_ratio = original_size / compressed_size
-                             ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
-ZeroDivisionError: division by zero
-","Traceback (most recent call last):
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 56, in <module>
-    app.decompress_file(input_file, output_file)
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 30, in decompress_file
-    compressed_data = read_compressed_file(input_path)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/utils/utils.py"", line 12, in read_compressed_file
-    with open(filepath, ""rb"") as file:
-         ^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'main/lzw_test_cases_compressed/empty_string.txt.lzw'
-"
-numeric_sequence.txt,True,0.06628012657165527,True,0.04945731163024902,True,"Tempo de execução: 0.0189 segundos
-Taxa de compressão: 1.6667
-","Tempo de execução: 0.0001 segundos
-Taxa de descompressão: 1.6667
-"
-unicode_symbols.txt,True,0.07877945899963379,False,0.2817258834838867,False,"Tempo de execução: 0.0322 segundos
-Taxa de compressão: 3.7037
-","Traceback (most recent call last):
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 56, in <module>
-    app.decompress_file(input_file, output_file)
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 32, in decompress_file
-    decompressed_data = self.decoder.decompress(compressed_data)
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/lzw_decoder.py"", line 39, in decompress
-    new_entry = self.dictionary[prev_code] + entry[0]
-                ~~~~~~~~~~~~~~~^^^^^^^^^^^
-KeyError: 277
-"
-repeated_text.txt,True,0.1808321475982666,True,0.07761359214782715,True,"Tempo de execução: 0.1216 segundos
-Taxa de compressão: 5.3271
-","Tempo de execução: 0.0005 segundos
-Taxa de descompressão: 5.3271
-"
-code_snippet.py,True,0.13617515563964844,True,0.04468178749084473,True,"Tempo de execução: 0.0697 segundos
-Taxa de compressão: 4.1716
-","Tempo de execução: 0.0002 segundos
-Taxa de descompressão: 4.1716
-"
-xml_snippet.xml,True,0.10173439979553223,True,0.0600435733795166,True,"Tempo de execução: 0.0507 segundos
-Taxa de compressão: 4.6829
-","Tempo de execução: 0.0002 segundos
-Taxa de descompressão: 4.6829
-"
-large_text_file.txt,True,0.15168309211730957,True,0.04846024513244629,True,"Tempo de execução: 0.0872 segundos
-Taxa de compressão: 4.5147
-","Tempo de execução: 0.0004 segundos
-Taxa de descompressão: 4.5147
-"
-small_text_file.txt,True,0.08598971366882324,True,0.07178020477294922,True,"Tempo de execução: 0.0233 segundos
+small_text.txt,True,0.06845879554748535,True,0.05618643760681152,True,"Tempo de execução: 0.0196 segundos
 Taxa de compressão: 1.0930
 ","Tempo de execução: 0.0001 segundos
 Taxa de descompressão: 1.0930
 "
-unicode_text.txt,True,0.09501767158508301,False,0.273953914642334,False,"Tempo de execução: 0.0383 segundos
-Taxa de compressão: 2.2917
-","Traceback (most recent call last):
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 56, in <module>
-    app.decompress_file(input_file, output_file)
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 32, in decompress_file
-    decompressed_data = self.decoder.decompress(compressed_data)
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/lzw_decoder.py"", line 39, in decompress
-    new_entry = self.dictionary[prev_code] + entry[0]
-                ~~~~~~~~~~~~~~~^^^^^^^^^^^
-KeyError: 311
-"
-binary_file.bin,False,0.329578161239624,False,0.2664008140563965,False,"Traceback (most recent call last):
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 54, in <module>
-    app.compress_file(input_file, output_file)
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 20, in compress_file
-    data = read_file(input_path)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/utils/utils.py"", line 7, in read_file
-    return file.read()
-           ^^^^^^^^^^^
-  File ""<frozen codecs>"", line 322, in decode
-UnicodeDecodeError: 'utf-8' codec can't decode byte 0x80 in position 128: invalid start byte
-","Traceback (most recent call last):
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 56, in <module>
-    app.decompress_file(input_file, output_file)
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 30, in decompress_file
-    compressed_data = read_compressed_file(input_path)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/utils/utils.py"", line 12, in read_compressed_file
-    with open(filepath, ""rb"") as file:
-         ^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'main/lzw_test_cases_compressed/binary_file.bin.lzw'
-"
-html_with_comments.txt,True,0.1059713363647461,True,0.05440211296081543,True,"Tempo de execução: 0.0580 segundos
-Taxa de compressão: 4.2444
+long_random_chars.txt,True,0.13486123085021973,True,0.0689244270324707,True,"Tempo de execução: 0.0615 segundos
+Taxa de compressão: 2.5000
 ","Tempo de execução: 0.0003 segundos
+Taxa de descompressão: 2.5000
+"
+large_image.bmp,True,96.91069626808167,True,0.06035661697387695,False,"Tempo de execução: 96.8438 segundos
+Taxa de compressão: 1635.3312
+","Tempo de execução: 0.0015 segundos
+Taxa de descompressão: 63.8801
+"
+mixed_ascii_binary.bin,True,0.08514857292175293,True,0.056108713150024414,False,"Tempo de execução: 0.0174 segundos
+Taxa de compressão: 0.0000
+","Tempo de execução: 0.0000 segundos
+Taxa de descompressão: 0.0000
+"
+random_english_words.txt,True,0.14529109001159668,True,0.06860494613647461,True,"Tempo de execução: 0.0953 segundos
+Taxa de compressão: 5.3936
+","Tempo de execução: 0.0003 segundos
+Taxa de descompressão: 5.3936
+"
+sequential_numbers.txt,True,0.10861968994140625,True,0.05613398551940918,True,"Tempo de execução: 0.0421 segundos
+Taxa de compressão: 7.2993
+","Tempo de execução: 0.0002 segundos
+Taxa de descompressão: 7.2993
+"
+json_nested.txt,True,0.12359428405761719,True,0.04875540733337402,True,"Tempo de execução: 0.0584 segundos
+Taxa de compressão: 4.0385
+","Tempo de execução: 0.0002 segundos
+Taxa de descompressão: 4.0385
+"
+short_text.txt,True,0.14555096626281738,True,0.0526275634765625,True,"Compressão aumentou o tamanho do arquivo. Retornando o original.
+Tempo de execução: 0.0900 segundos
+Taxa de compressão: 1.0000
+","Tempo de execução: 0.0001 segundos
+Taxa de descompressão: 1.0000
+"
+css_snippet.css,True,0.1114039421081543,True,0.055321455001831055,True,"Tempo de execução: 0.0603 segundos
+Taxa de compressão: 4.7273
+","Tempo de execução: 0.0002 segundos
+Taxa de descompressão: 4.7273
+"
+long_numbers.txt,True,0.14409542083740234,True,0.05875682830810547,True,"Tempo de execução: 0.0831 segundos
+Taxa de compressão: 10.2564
+","Tempo de execução: 0.0002 segundos
+Taxa de descompressão: 10.2564
+"
+empty_string.txt,True,0.15532708168029785,True,0.04812216758728027,True,"Compressão aumentou o tamanho do arquivo. Retornando o original.
+Tempo de execução: 0.0943 segundos
+Taxa de compressão: 0.0000
+","Tempo de execução: 0.0000 segundos
+Taxa de descompressão: 0.0000
+"
+numeric_sequence.txt,True,0.06649589538574219,True,0.049165964126586914,True,"Tempo de execução: 0.0184 segundos
+Taxa de compressão: 1.6667
+","Tempo de execução: 0.0001 segundos
+Taxa de descompressão: 1.6667
+"
+repeated_text.txt,True,0.23334956169128418,True,0.06044125556945801,True,"Tempo de execução: 0.1555 segundos
+Taxa de compressão: 5.3271
+","Tempo de execução: 0.0004 segundos
+Taxa de descompressão: 5.3271
+"
+code_snippet.py,True,0.12557721138000488,True,0.05212211608886719,True,"Tempo de execução: 0.0746 segundos
+Taxa de compressão: 4.1716
+","Tempo de execução: 0.0003 segundos
+Taxa de descompressão: 4.1716
+"
+xml_snippet.xml,True,0.11869287490844727,True,0.049214839935302734,True,"Tempo de execução: 0.0636 segundos
+Taxa de compressão: 4.6829
+","Tempo de execução: 0.0002 segundos
+Taxa de descompressão: 4.6829
+"
+large_text_file.txt,True,0.1750493049621582,True,0.057950735092163086,True,"Tempo de execução: 0.1165 segundos
+Taxa de compressão: 4.5147
+","Tempo de execução: 0.0004 segundos
+Taxa de descompressão: 4.5147
+"
+small_text_file.txt,True,0.08047366142272949,True,0.054929494857788086,True,"Tempo de execução: 0.0216 segundos
+Taxa de compressão: 1.0930
+","Tempo de execução: 0.0001 segundos
+Taxa de descompressão: 1.0930
+"
+binary_file.bin,True,0.19035863876342773,True,0.09586262702941895,False,"Tempo de execução: 0.1077 segundos
+Taxa de compressão: 84.7458
+","Tempo de execução: 0.0001 segundos
+Taxa de descompressão: 3.3898
+"
+large_text.txt,True,2.566303014755249,True,0.051694631576538086,True,"Tempo de execução: 2.4129 segundos
+Taxa de compressão: 22.6730
+","Tempo de execução: 0.0016 segundos
+Taxa de descompressão: 22.6730
+"
+source_code.py,True,0.16125273704528809,True,0.047710418701171875,True,"Tempo de execução: 0.1119 segundos
+Taxa de compressão: 6.0665
+","Tempo de execução: 0.0003 segundos
+Taxa de descompressão: 6.0665
+"
+html_with_comments.txt,True,0.11345458030700684,True,0.059693098068237305,True,"Tempo de execução: 0.0627 segundos
+Taxa de compressão: 4.2444
+","Tempo de execução: 0.0004 segundos
 Taxa de descompressão: 4.2444
 "
-yaml_data.yaml,True,0.08735394477844238,True,0.05474233627319336,True,"Tempo de execução: 0.0420 segundos
+yaml_data.yaml,True,0.08793115615844727,True,0.04883241653442383,True,"Tempo de execução: 0.0408 segundos
 Taxa de compressão: 3.4872
 ","Tempo de execução: 0.0002 segundos
 Taxa de descompressão: 3.4872
 "
-long_text_with_numbers.txt,True,0.08965587615966797,True,0.047896385192871094,True,"Tempo de execução: 0.0445 segundos
+long_text_with_numbers.txt,True,0.12008285522460938,True,0.060193538665771484,True,"Tempo de execução: 0.0550 segundos
 Taxa de compressão: 4.2661
-","Tempo de execução: 0.0002 segundos
+","Tempo de execução: 0.0003 segundos
 Taxa de descompressão: 4.2661
 "
-symbols_and_numbers.txt,True,0.09001946449279785,True,0.04654550552368164,True,"Tempo de execução: 0.0380 segundos
+symbols_and_numbers.txt,True,0.1085202693939209,True,0.06149768829345703,True,"Tempo de execução: 0.0449 segundos
 Taxa de compressão: 5.2632
-","Tempo de execução: 0.0002 segundos
+","Tempo de execução: 0.0004 segundos
 Taxa de descompressão: 5.2632
-"
-unicode_emojis.txt,True,0.07944750785827637,False,0.31798434257507324,False,"Tempo de execução: 0.0289 segundos
-Taxa de compressão: 10.0000
-","Traceback (most recent call last):
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 56, in <module>
-    app.decompress_file(input_file, output_file)
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/main.py"", line 32, in decompress_file
-    decompressed_data = self.decoder.decompress(compressed_data)
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File ""/home/matheus/Área de Trabalho/UFMG/ALG2/TP1/LZW_Compression_and_Decompression_UFMG_ALG2/main/lzw_decoder.py"", line 33, in decompress
-    entry = self.dictionary[prev_code] + self.dictionary[prev_code][0]
-            ~~~~~~~~~~~~~~~^^^^^^^^^^^
-KeyError: 257
 "

@@ -35,12 +35,6 @@ python -m venv venv
 source venv/bin/activate   # No Windows use `venv\Scripts\activate`
 ```
 
-3. Instale as dependências:
-
-```bash
-pip install -r requirements.txt
-```
-
 ## Como Usar
 
 ### Compressão de Arquivo
@@ -48,15 +42,16 @@ pip install -r requirements.txt
 Para comprimir um arquivo de texto, execute o script `main.py` com o seguinte comando:
 
 ```bash
-python main.py compress <input_file> <output_file>
+python main.py compress <input_file> <output_file> [max_bits]
 ```
 
 - `<input_file>`: Caminho do arquivo de entrada a ser comprimido.
 - `<output_file>`: Caminho do arquivo de saída para armazenar os dados comprimidos.
-
+- `[max_bits]` : Valor opcional para definir tamanho variável de bits, assume valor 12 como padrão.
 Exemplo:
 
 ```bash
+python main.py compress input.txt compressed_output.txt 36 ou
 python main.py compress input.txt compressed_output.txt
 ```
 
@@ -65,11 +60,12 @@ python main.py compress input.txt compressed_output.txt
 Para descomprimir um arquivo comprimido, execute o seguinte comando:
 
 ```bash
-python main.py decompress <input_file> <output_file>
+python main.py decompress <input_file> <output_file> [max_bits]
 ```
 
 - `<input_file>`: Caminho do arquivo comprimido a ser descomprimido.
 - `<output_file>`: Caminho do arquivo de saída para armazenar os dados descomprimidos.
+- `[max_bits]` : Valor opcional para definir tamanho variável de bits, assume valor 12 como padrão.
 
 Exemplo:
 

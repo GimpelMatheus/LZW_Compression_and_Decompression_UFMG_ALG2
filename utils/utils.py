@@ -3,8 +3,12 @@ from struct import pack, unpack
 
 def read_file(filepath):
     """Lê o conteúdo do arquivo e retorna como string."""
-    with open(filepath, "r") as file:
-        return file.read()
+    if ".bin" in filepath or ".bmp" in filepath:
+        with open(filepath, "rb") as file:
+            return file.read()
+    else:
+        with open(filepath, "r") as file:
+            return file.read()
     
 def read_compressed_file(filepath):
     """Lê o conteúdo do arquivo compresso e retorna como lista de códigos binários."""
@@ -28,4 +32,7 @@ def write_compressed_file(filepath, data):
     """Escreve o conteúdo comprimido no arquivo."""
     with open(filepath, "wb") as file:
         for code in data:
-            file.write(pack('>H', code))
+            if isinstance(code, int):
+                file.write(pack('>H', code))
+            else:
+                file.write(pack('>H', int(ord(code))))
