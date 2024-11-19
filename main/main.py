@@ -2,10 +2,10 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from lzw_encoder import LZWEncoder
-from lzw_decoder import LZWDecoder
+from LZW.lzw_encoder import LZWEncoder
+from LZW.lzw_decoder import LZWDecoder
 from utils.utils import read_file, read_compressed_file, write_file, write_compressed_file
-from report_manager import ReportManager
+from utils.report_manager import ReportManager
 
 class LZWApp:
     """Classe principal que gerencia o fluxo de compressão e descompressão."""

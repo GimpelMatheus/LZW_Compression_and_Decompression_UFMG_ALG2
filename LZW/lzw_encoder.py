@@ -1,4 +1,4 @@
-from trie import Trie
+from .trie import Trie
 
 class LZWEncoder:
     """Classe para compressão de dados usando o algoritmo LZW com Trie compacta e formato binário variável."""
