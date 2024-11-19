@@ -6,18 +6,18 @@ import pandas as pd
 import psutil
 import matplotlib.pyplot as plt
 
-# Define directories and paths
+# Definir diretórios e caminhos
 test_dir = "lzw_test_cases"
 compressed_dir = "lzw_test_cases_compressed"
 decompressed_dir = "lzw_test_cases_decompressed"
 os.makedirs(compressed_dir, exist_ok=True)
 os.makedirs(decompressed_dir, exist_ok=True)
 
-# Report list to store results
+# Lista para armazenar os resultados do relatório
 report_data = []
 
 def file_hash(filepath):
-    """Helper function to calculate SHA-256 hash of a file."""
+    """ Função auxiliar para calcular o SHA-256 de um arquivo."""
     hash_sha256 = hashlib.sha256()
     with open(filepath, "rb") as f:
         for chunk in iter(lambda: f.read(4096), b""):
@@ -101,7 +101,7 @@ for max_bits in range(12, 17):
             "Decompression Output": decompress_result.stdout + decompress_result.stderr
         })
 
-# Convert report data to DataFrame and save as CSV
+# Converte os dados do relatório para um DataFrame e salva como CSV
 report_df = pd.DataFrame(report_data)
 report_path = "report/compression_report.csv"
 os.makedirs(os.path.dirname(report_path), exist_ok=True)
