@@ -1,4 +1,4 @@
-Aqui está o README atualizado de acordo com a nova estrutura do projeto, incluindo a explicação sobre o `code_report`:
+Link do relatório: https://matheus20977.github.io/lzw-project-report/
 
 ---
 
