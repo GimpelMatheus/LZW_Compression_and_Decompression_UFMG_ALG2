@@ -1,27 +1,53 @@
-# LZW_Compression_and_Decompression_UFMG_ALG2
-Trabalho realizado para disciplina de Algoritmos 2 na UFMG no semestre de 2024/02
+Link do relatório: https://matheus20977.github.io/lzw-project-report/
 
-Este é um projeto de compressão e descompressão de dados utilizando o algoritmo **LZW** (Lempel-Ziv-Welch), implementado em Python. O projeto contém as seguintes funcionalidades:
+---
+
+# LZW Compression and Decompression
+
+Projeto desenvolvido para a disciplina de Algoritmos 2 na UFMG no semestre de 2024/02. Este projeto implementa o algoritmo **LZW** (Lempel-Ziv-Welch) em Python para compressão e descompressão de dados. Inclui funcionalidades para geração de relatórios com métricas detalhadas do processo.
+
+## Funcionalidades
 
 - **Compressão de arquivos**: Usa o algoritmo LZW para comprimir arquivos de texto.
-- **Descompressão de arquivos**: Desfaz a compressão dos arquivos previamente comprimidos.
-- **Relatórios**: Geração de relatórios com métricas como tempo de execução e taxa de compressão.
+- **Descompressão de arquivos**: Reconstrói arquivos previamente comprimidos.
+- **Geração de relatórios detalhados**: Inclui informações sobre taxa de compressão, tempos de execução e uso de recursos do sistema.
+- **`code_report`**: Módulo responsável por criar relatórios gráficos e comparativos a partir dos dados gerados no processo de compressão e descompressão.
+
+---
 
 ## Estrutura do Projeto
 
-A estrutura do projeto é a seguinte:
+A estrutura atual do projeto é a seguinte:
 
 ```
-LZW-Compression
+LZW_Project/
 │
-├── lzw_encoder.py       # Implementação do codificador LZW
-├── lzw_decoder.py       # Implementação do decodificador LZW
-├── report_manager.py    # Geração de relatórios de compressão
-├── utils.py             # Funções auxiliares (leitura e escrita de arquivos)
-├── main.py              # Script principal que executa a compressão/descompressão
-├── README.md            # Documentação do projeto
-└── requirements.txt     # Dependências do projeto
+├── code_report/
+│   ├── code_report.py           # Geração de gráficos e relatórios avançados
+│   ├── compression_report.csv   # Relatório gerado durante o processamento
+│   ├── lzw_test_cases_compressed/ # Arquivos comprimidos durante os testes
+│   ├── lzw_test_cases_decompressed/ # Arquivos descomprimidos durante os testes
+│
+├── tests/
+│   ├── <test_files>             # Arquivos de teste de diversos formatos
+│
+├── main/
+│   ├── main.py                  # Script principal para compressão/descompressão
+│
+├── LZW/
+│   ├── lzw_encoder.py           # Implementação do codificador LZW
+│   ├── lzw_decoder.py           # Implementação do decodificador LZW
+│   ├── trie.py                  # Estrutura de dados para auxiliar no LZW
+│
+├── utils/
+│   ├── report_manager.py        # Gerenciamento de relatórios
+│   ├── utils.py                 # Funções auxiliares de leitura/escrita
+│
+├── README.md                    # Documentação do projeto
+└── requirements.txt             # Dependências do projeto
 ```
+
+---
 
 ## Requisitos
 
@@ -30,16 +56,17 @@ Para rodar o projeto, você precisará de um ambiente Python 3.x. Você pode ins
 1. Clone o repositório ou baixe o código.
 2. Crie um ambiente virtual (opcional, mas recomendado):
 
-```bash
-python -m venv venv
-source venv/bin/activate   # No Windows use `venv\Scripts\activate`
-```
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # No Windows use `venv\Scripts\activate`
+   ```
 
 3. Instale as dependências:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-```bash
-pip install -r requirements.txt
-```
+---
 
 ## Como Usar
 
@@ -48,16 +75,17 @@ pip install -r requirements.txt
 Para comprimir um arquivo de texto, execute o script `main.py` com o seguinte comando:
 
 ```bash
-python main.py compress <input_file> <output_file>
+python main.py compress <input_file> <output_file> [max_bits]
 ```
 
 - `<input_file>`: Caminho do arquivo de entrada a ser comprimido.
 - `<output_file>`: Caminho do arquivo de saída para armazenar os dados comprimidos.
+- `[max_bits]` : Valor opcional para definir tamanho variável de bits (padrão: 12).
 
 Exemplo:
 
 ```bash
-python main.py compress input.txt compressed_output.txt
+python main.py compress tests/example.txt code_report/lzw_test_cases_compressed/example.txt.lzw
 ```
 
 ### Descompressão de Arquivo
@@ -74,17 +102,38 @@ python main.py decompress <input_file> <output_file>
 Exemplo:
 
 ```bash
-python main.py decompress compressed_output.txt decompressed_output.txt
+python main.py decompress code_report/lzw_test_cases_compressed/example.txt.lzw code_report/lzw_test_cases_decompressed/example.txt
 ```
+
+---
 
 ### Relatórios
 
-O programa gera relatórios após a compressão e descompressão, incluindo:
+#### Geração Automática de Relatórios
+Durante a compressão/descompressão, o sistema gera automaticamente um relatório `compression_report.csv` na pasta `code_report/`. Este relatório inclui:
 
 - **Tempo de execução**: Quanto tempo levou para processar o arquivo.
-- **Taxa de compressão**: A relação entre o tamanho original e o tamanho comprimido.
+- **Taxa de compressão**: Relação entre os tamanhos dos arquivos original e comprimido.
+- **Uso de recursos do sistema**: Informações sobre CPU, memória e disco durante a execução.
 
-Essas estatísticas são exibidas automaticamente após cada operação.
+#### Módulo `code_report.py`
+
+O arquivo `code_report.py` utiliza os dados do relatório `compression_report.csv` para gerar gráficos e visualizações, facilitando a análise do desempenho do algoritmo. Ele inclui:
+
+1. **Gráficos de desempenho**:
+   - Uso de CPU, memória e disco por tipo de arquivo.
+   - Comparação de tempo de compressão para diferentes tamanhos de arquivo e valores de `max_bits`.
+
+2. **Personalização**:
+   - O `code_report.py` pode ser modificado para incluir novas métricas ou focar em análises específicas.
+
+Para executar o `code_report.py`, use o comando:
+
+```bash
+python code_report/code_report.py
+```
+
+---
 
 ## Implementação
 
@@ -100,13 +149,17 @@ O decodificador LZW usa o dicionário criado durante a compressão para reconstr
 
 A classe `ReportManager` gerencia o tempo de execução e calcula a taxa de compressão. Ela também exibe um relatório com essas informações ao final do processo.
 
-### Utils
+### `code_report.py`
 
-O arquivo `utils.py` contém funções auxiliares para leitura e escrita de arquivos, facilitando o trabalho de manipulação de dados.
+Este script processa os dados gerados no relatório e cria visualizações, permitindo uma análise gráfica do desempenho do algoritmo.
+
+---
 
 ## Exemplo de Uso
 
-Suponha que você tenha um arquivo `example.txt` com o seguinte conteúdo:
+### Compressão e Descompressão
+
+Suponha que você tenha um arquivo `tests/example.txt` com o seguinte conteúdo:
 
 ```
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -115,17 +168,28 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Para comprimi-lo, basta rodar:
 
 ```bash
-python main.py compress example.txt compressed_example.txt
+python3 code_report/code_report.py ou
+python3 main/main.py compress tests/lzw_test_cases/example.txt tests/lzw_test_cases_compressed/example.txt.lzw
 ```
 
 Depois, para descomprimir, execute:
 
 ```bash
-python main.py decompress compressed_example.txt decompressed_example.txt
+python3 main/main.py decompress tests/lzw_test_cases_compressed/example.txt.lzw tests/lzw_test_cases_decompressed/example.txt
 ```
 
-Após a execução, o arquivo `decompressed_example.txt` conterá o conteúdo original.
+Após a execução, o arquivo `tests/lzw_test_cases_decompressed/example.txt` conterá o conteúdo original.
+
+### Geração de Relatórios Gráficos
+
+Execute o `code_report.py` para criar gráficos baseados no relatório gerado:
+
+```bash
+python code_report/code_report.py
+```
+
+---
 
 ## Dependências
 
-Este projeto não possui dependências externas além da biblioteca padrão do Python. Contudo, você pode incluir uma lista de pacotes no arquivo `requirements.txt` para facilitar a instalação de dependências caso seja necessário.
+Este projeto utiliza apenas bibliotecas padrão do Python. Contudo, caso precise de extensões para análise ou gráficos avançados, você pode atualizar o `requirements.txt` com as dependências necessárias.
